@@ -1,38 +1,233 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #eef5ff, #dfe9f7);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding: 40px;
+}
+
+.app {
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.12);
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 8px;
+  background: #2563eb;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.input-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.task-input {
+  flex: 1;
+  height: 56px;
+  border: 2px solid #dbe3ef;
+  border-radius: 14px;
+  padding: 0 18px;
+  font-size: 17px;
+  transition: .25s;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 5px rgba(59,130,246,.15);
+}
+
+.add-btn {
+  height: 56px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 14px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.add-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  border: none;
+  padding: 10px 22px;
+  border-radius: 50px;
+  background: #eef2ff;
+  color: #475569;
+  cursor: pointer;
+  font-size: 15px;
+  transition: .25s;
+}
+
+.filter-btn:hover {
+  background: #dbeafe;
+}
+
+.filter-btn.active {
+  background: #2563eb;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #f8fbff;
+  border-radius: 18px;
+  padding: 18px 20px;
+  border: 2px solid transparent;
+  transition: .25s;
+}
+
+.task-item:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.task-item.done {
+  opacity: .7;
+}
+
+.task-item.done .task-label {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.check-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .25s;
+  font-size: 15px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.check-box.checked {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: white;
+}
+
+.task-label {
+  flex: 1;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.del-btn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: .25s;
+}
+
+.del-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #94a3b8;
+  font-size: 17px;
+}
+
+.clear-btn {
+  margin-top: 25px;
+  margin-left: auto;
+  display: block;
+  border: none;
+  background: #ef4444;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.clear-btn:hover {
+  background: #dc2626;
+}
+
+@media (max-width:600px){
+
+  .app{
+    padding:25px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .title{
+    font-size:28px;
+  }
+
+  .input-row{
+    flex-direction:column;
+  }
+
+  .add-btn{
+    width:100%;
   }
 }
